@@ -1,6 +1,19 @@
-import java.util.Arrays;
-
 class Solution {
+    public int solution(String A, String B) {
+
+        int lenA = A.length();
+        char[] chars = B.toCharArray();
+        StringBuilder sb = new StringBuilder(B);
+        
+        for (int i = 0; i < lenA; i++) {
+            if (A.equals(sb.toString())) return i;
+            sb.insert(lenA, sb.charAt(0));
+            sb.delete(0, 1);
+        }
+        return -1;
+    }
+
+    /*
     public int solution(String A, String B) {
         int lenA = A.length();
         char[] chars = B.toCharArray();
@@ -16,4 +29,5 @@ class Solution {
         }
         return -1;
     }
+    */
 }
